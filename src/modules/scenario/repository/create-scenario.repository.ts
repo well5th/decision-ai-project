@@ -1,13 +1,15 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../../../shared/databases/prisma.database';
 import { CreateScenarioDto } from '../dto/create-scenario.dto';
+import { createFind } from 'rxjs/internal/operators/find';
 
 @Injectable()
 export class CreateScenarioRepository {
   constructor(private readonly prisma: PrismaService) {}
+  
 
   async create(data: CreateScenarioDto) {
-    const scenario = await this.prisma.scenario.create({
+    const scenario = await this.prisma.scenario.create ({
       data,
     });
     return scenario;

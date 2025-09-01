@@ -7,8 +7,8 @@ import { CreateScenarioUseCase } from './use-cases';
 export class ScenarioService {
   constructor(private readonly createScenarioUseCase: CreateScenarioUseCase) {}
 
-  create(createScenarioDto: CreateScenarioDto) {
-    return this.createScenarioUseCase.execute(createScenarioDto);
+  create(data: CreateScenarioDto) {
+    return this.createScenarioUseCase.execute(data);
   }
 
   findAll() {
